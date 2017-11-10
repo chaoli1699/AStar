@@ -6,8 +6,8 @@ A Star 寻路算法简介：http://www.jianshu.com/p/bb317d02d055
 2. 设计并封装了map生成算法
 3. 寻路完成返回路径坐标，便于继续调用
 4. 使用方法：
-    1.在项目中导入jar文件夹下 “astar.jar”
-	2.调用代码
+    1. 在项目中导入jar文件夹下 “astar.jar”
+	2. 调用代码
 	
 	public static void main(String[] args){
 		System.out.println("main");
