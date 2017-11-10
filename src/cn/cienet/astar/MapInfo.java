@@ -8,6 +8,14 @@ public class MapInfo {
 	public Node start; // 起始结点
 	public Node end; // 最终结点
 	
+	/**
+	 * 初始化寻路信息
+	 * @param maps
+	 * @param width
+	 * @param hight
+	 * @param start
+	 * @param end
+	 */
 	public MapInfo(int[][] maps, int width, int hight, Node start, Node end)
 	{
 		this.maps = maps;

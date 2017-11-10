@@ -21,6 +21,13 @@ public class MapBuilder {
     	return instance;
     }
 	
+    /**
+     * 创建地图数组
+     * @param width
+     * @param height
+     * @param stoneList eg:{ax, ay, bx, by} a,b分别问障碍区域（矩形）左上角和右下角的点
+     * @return int[][] map
+     */
 	public int[][] createMap(int width, int height,List<int[]> stoneList){
 		map=new int[height][width];
 		
@@ -48,6 +55,10 @@ public class MapBuilder {
 		}
 	}
 	
+	/**
+	 * 输出地图数组
+	 * @param map
+	 */
 	public void printMap(int[][] map){
 		for(int i=0;i<map.length;i++){
 			System.out.print('\n');
@@ -57,6 +68,10 @@ public class MapBuilder {
 		}
 	}
 	
+	/**
+	 * 输出路径坐标
+	 * @param pointList
+	 */
 	public void printPathPoints(List<int[]> pointList){
 		for(int i=0;i<pointList.size();i++){
 			System.out.print('\n');

@@ -16,7 +16,7 @@ public class AStar {
 	List<Node> closeList = new ArrayList<Node>();
 	
 	/**
-	 * 开始算法
+	 * 开始寻路
 	 */
 	public List<int[]> start(MapInfo mapInfo)
 	{
@@ -57,7 +57,7 @@ public class AStar {
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		List<int[]> pointList=new ArrayList();
 		if(end==null||maps==null) return null;
-		System.out.println("总代价：" + end.G);
+	    System.out.println("总代价：" + end.G);
 		while (end != null)
 		{
 			Coord c = end.coord;

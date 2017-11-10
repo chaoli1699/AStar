@@ -22,14 +22,16 @@ public class AstarTest {
 		stoneList.add(a);
 		stoneList.add(b);
 		stoneList.add(c);
-		//onMap.showMap(onMap.createMap(20,20,stoneList));
 		int[][] map=mapBuilder.createMap(20, 20, stoneList);
-		
+				
 		MapInfo info=new MapInfo(map,20,20,new Node(4,5),new Node(15,18));
 		List<int[]> path=new AStar().start(info);
-		mapBuilder.printMap(map);
 		
-		if(path!=null){
+		if(map.length>0){
+			mapBuilder.printMap(map);
+		}
+		
+		if(path!=null){ 
 			mapBuilder.printPathPoints(path);
 		}
 		
