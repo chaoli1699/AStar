@@ -1,4 +1,4 @@
-package cn.cienet.onmap;
+package cn.cienet.astar;
 
 public class Node implements Comparable<Node>{
 	

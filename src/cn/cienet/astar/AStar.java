@@ -1,4 +1,4 @@
-package cn.cienet.onmap;
+package cn.cienet.astar;
 
 import java.util.ArrayList;
 import java.util.List;

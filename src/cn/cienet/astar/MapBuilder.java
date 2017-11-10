@@ -1,10 +1,25 @@
-package cn.cienet.onmap;
+package cn.cienet.astar;
 
 import java.util.List;
 
-public class OnMap {
+public class MapBuilder {
 
+	
     private int[][] map;
+    private volatile static MapBuilder instance;
+    
+    private MapBuilder(){}
+    
+    public static MapBuilder build(){
+    	if(instance==null){
+    		synchronized(MapBuilder.class){
+    			if(instance==null){
+    				instance=new MapBuilder();
+    			}
+    		}
+    	}
+    	return instance;
+    }
 	
 	public int[][] createMap(int width, int height,List<int[]> stoneList){
 		map=new int[height][width];
@@ -33,7 +48,7 @@ public class OnMap {
 		}
 	}
 	
-	public void showMap(int[][] map){
+	public void printMap(int[][] map){
 		for(int i=0;i<map.length;i++){
 			System.out.print('\n');
 			for(int j=0;j<map[i].length;j++){
@@ -42,7 +57,7 @@ public class OnMap {
 		}
 	}
 	
-	public void getPathPoints(List<int[]> pointList){
+	public void printPathPoints(List<int[]> pointList){
 		for(int i=0;i<pointList.size();i++){
 			System.out.print('\n');
 			int[] point=pointList.get(i);
