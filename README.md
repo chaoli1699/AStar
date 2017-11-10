@@ -21,7 +21,7 @@ A Star 寻路算法简介：http://www.jianshu.com/p/bb317d02d055
 		stoneList.add(a);
 		stoneList.add(b);
 		stoneList.add(c);
-		//onMap.showMap(onMap.createMap(20,20,stoneList));
+		
 		int[][] map=mapBuilder.createMap(20, 20, stoneList);
 		
 		MapInfo info=new MapInfo(map,20,20,new Node(4,5),new Node(15,18));
