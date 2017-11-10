@@ -7,7 +7,7 @@ A Star 寻路算法简介：http://www.jianshu.com/p/bb317d02d055
 3. 寻路完成返回路径坐标，便于继续调用
 4. 使用方法：
     1. 在项目中导入jar文件夹下 “astar.jar”
-	2. 调用代码
+	2. 调用
 	
 	public static void main(String[] args){
 		System.out.println("main");
@@ -21,14 +21,16 @@ A Star 寻路算法简介：http://www.jianshu.com/p/bb317d02d055
 		stoneList.add(a);
 		stoneList.add(b);
 		stoneList.add(c);
-		
 		int[][] map=mapBuilder.createMap(20, 20, stoneList);
-		
+				
 		MapInfo info=new MapInfo(map,20,20,new Node(4,5),new Node(15,18));
 		List<int[]> path=new AStar().start(info);
-		mapBuilder.printMap(map);
 		
-		if(path!=null){
-			mapBuilder.printPathPoints(path);
+		if(map.length>0){
+			mapBuilder.printMap(map);
 		}
-    }
+		
+		if(path!=null){ 
+			mapBuilder.printPathPoints(path);
+		}	
+	}
