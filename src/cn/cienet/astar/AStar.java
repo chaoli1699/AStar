@@ -18,7 +18,7 @@ public class AStar {
 	/**
 	 * 开始寻路
 	 */
-	public List<int[]> start(MapInfo mapInfo)
+	public List<int[]> start(PathInfo mapInfo)
 	{
 		if(mapInfo==null) return null;
 		// clean
@@ -32,7 +32,7 @@ public class AStar {
 	/**
 	 * 移动当前结点
 	 */
-	private List<int[]> moveNodes(MapInfo mapInfo)
+	private List<int[]> moveNodes(PathInfo mapInfo)
 	{
 		while (!openList.isEmpty())
 		{
@@ -75,7 +75,7 @@ public class AStar {
 	/**
 	 * 添加所有邻结点到open表
 	 */
-	private void addNeighborNodeInOpen(MapInfo mapInfo,Node current)
+	private void addNeighborNodeInOpen(PathInfo mapInfo,Node current)
 	{
 		int x = current.coord.x;
 		int y = current.coord.y;
@@ -100,7 +100,7 @@ public class AStar {
 	/**
 	 * 添加一个邻结点到open表
 	 */
-	private void addNeighborNodeInOpen(MapInfo mapInfo,Node current, int x, int y, int value)
+	private void addNeighborNodeInOpen(PathInfo mapInfo,Node current, int x, int y, int value)
 	{
 		if (canAddNodeToOpen(mapInfo,x, y))
 		{
@@ -170,12 +170,12 @@ public class AStar {
 	/**
 	 * 判断结点能否放入Open列表
 	 */
-	private boolean canAddNodeToOpen(MapInfo mapInfo,int x, int y)
+	private boolean canAddNodeToOpen(PathInfo pathInfo,int x, int y)
 	{
 		// 是否在地图中
-		if (x < 0 || x >= mapInfo.width || y < 0 || y >= mapInfo.hight) return false;
+		if (x < 0 || x >= pathInfo.width || y < 0 || y >= pathInfo.hight) return false;
 		// 判断是否是不可通过的结点
-		if (mapInfo.maps[y][x] == BAR) return false;
+		if (pathInfo.maps[y][x] == BAR) return false;
 		// 判断结点是否存在close表
 		if (isCoordInClose(x, y)) return false;
 

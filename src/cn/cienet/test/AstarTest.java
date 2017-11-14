@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.cienet.astar.AStar;
-import cn.cienet.astar.MapInfo;
+import cn.cienet.astar.PathInfo;
 import cn.cienet.astar.Node;
 import cn.cienet.astar.MapBuilder;
 
@@ -24,7 +24,7 @@ public class AstarTest {
 		stoneList.add(c);
 		int[][] map=mapBuilder.createMap(20, 20, stoneList);
 				
-		MapInfo info=new MapInfo(map,20,20,new Node(4,5),new Node(15,18));
+		PathInfo info=new PathInfo(map,20,20,new Node(4,5),new Node(15,18));
 		List<int[]> path=new AStar().start(info);
 		
 		if(map.length>0){

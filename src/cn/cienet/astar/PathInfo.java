@@ -1,6 +1,6 @@
 package cn.cienet.astar;
 
-public class MapInfo {
+public class PathInfo {
 
 	public int[][] maps; // 二维数组的地图
 	public int width; // 地图的宽
@@ -16,7 +16,7 @@ public class MapInfo {
 	 * @param start
 	 * @param end
 	 */
-	public MapInfo(int[][] maps, int width, int hight, Node start, Node end)
+	public PathInfo(int[][] maps, int width, int hight, Node start, Node end)
 	{
 		this.maps = maps;
 		this.width = width;
