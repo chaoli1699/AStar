@@ -13,26 +13,31 @@ public class AstarTest {
 	public static void main(String[] args){
 		System.out.println("main");
 		
+		int mWidth =125;
+		int mHeight =125;
 		MapBuilder mapBuilder=MapBuilder.build();
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		List<int[]> stoneList=new ArrayList();
-		int[] a={4,1,8,3};
-		int[] b={6,3,9,7};
-		int[] c={4,9,10,19};
+		int[] a={10,10,20,30};
+		int[] b={50,50,60,60};
+		int[] c={30,80,40,100};
 		stoneList.add(a);
 		stoneList.add(b);
 		stoneList.add(c);
-		int[][] map=mapBuilder.createMap(20, 20, stoneList);
+		int[][] map=mapBuilder.createMap(mWidth, mHeight, stoneList);
 				
-		PathInfo info=new PathInfo(map,20,20,new Node(4,5),new Node(15,18));
+		long startTime=System.currentTimeMillis();
+		PathInfo info=new PathInfo(map,mWidth,mHeight,new Node(2,2),new Node(mWidth-2,mHeight-2));
 		List<int[]> path=new AStar().start(info);
 		
-		if(map.length>0){
-			mapBuilder.printMap(map);
-		}
+//		if(map.length>0){
+//			mapBuilder.printMap(map);
+//		}
 		
 		if(path!=null){ 
-			mapBuilder.printPathPoints(path);
+			long endTime=System.currentTimeMillis();
+			System.out.println("TOTAL TIME: "+(endTime-startTime)+"ms");
+//			mapBuilder.printPathPoints(path);
 		}
 		
 		
